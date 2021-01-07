@@ -1,0 +1,7 @@
+DEPENDENCIES
+  black_widow
+    path: .
+    metadata: true
+
+GRAPH
+  black_widow (1.0.0)

@@ -1,0 +1,12 @@
+{
+    "name": "vagrant",
+    "description": "Default Environment for Vagrant",
+    "json_class": "Chef::Environment",
+    "chef_type": "environment",
+    "default_attributes": {
+        "azure_eventhub_logging": {
+            "connection_string": "Endpoint=sb://bink-blackwidow-oslogs.servicebus.windows.net/;SharedAccessKeyName=oslogs;SharedAccessKey=qw9qQyzhWypzl/9fIcrP1BsY4GsKHcTQ/SajGgveaDA=;EntityPath=oslogs",
+            "endpoint": "bink-blackwidow-oslogs.servicebus.windows.net"
+        }
+    }
+}
