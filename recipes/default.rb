@@ -25,7 +25,7 @@ template '/etc/journalbeat/journalbeat.yml' do
   action :create
   notifies :restart, 'service[journalbeat]'
   variables(
-    connection_string: node['azure_eventhub_logging']['connection_string'],
-    endpoint: node['azure_eventhub_logging']['endpoint']
+    connection_string: node['azure_eventhub_logging']['oslogs_connection_string'],
+    endpoint: node['azure_eventhub_logging']['oslogs_endpoint']
   )
 end

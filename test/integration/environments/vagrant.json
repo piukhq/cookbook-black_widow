@@ -5,8 +5,10 @@
     "chef_type": "environment",
     "default_attributes": {
         "azure_eventhub_logging": {
-            "connection_string": "Endpoint=sb://bink-blackwidow-oslogs.servicebus.windows.net/;SharedAccessKeyName=oslogs;SharedAccessKey=qw9qQyzhWypzl/9fIcrP1BsY4GsKHcTQ/SajGgveaDA=;EntityPath=oslogs",
-            "endpoint": "bink-blackwidow-oslogs.servicebus.windows.net"
+            "oslogs_connection_string": "Endpoint=sb://bink-blackwidow-oslogs.servicebus.windows.net/;SharedAccessKeyName=oslogs;SharedAccessKey=qw9qQyzhWypzl/9fIcrP1BsY4GsKHcTQ/SajGgveaDA=;EntityPath=oslogs",
+            "oslogs_endpoint": "bink-blackwidow-oslogs.servicebus.windows.net",
+            "auditlogs_connection_string": "Endpoint=sb://bink-blackwidow-oslogs.servicebus.windows.net/;SharedAccessKeyName=auditlogs;SharedAccessKey=qz2rDWCgtlZu+pDikFmxkd8uf+IOq1F17EHTQVjZGxQ=;EntityPath=auditlogs",
+            "auditlogs_endpoint": "bink-blackwidow-oslogs.servicebus.windows.net"
         }
     }
 }
