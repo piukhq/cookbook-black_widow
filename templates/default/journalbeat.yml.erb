@@ -19,6 +19,10 @@ output.kafka:
   compression: none
 
 processors:
+  - drop_event:
+      when:
+        equals:
+          systemd.transport: "audit"
   - add_host_metadata: ~
   - add_cloud_metadata: ~
   - drop_fields:
