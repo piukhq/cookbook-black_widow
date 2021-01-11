@@ -21,7 +21,14 @@ output.kafka:
 processors:
   - add_host_metadata: ~
   - add_cloud_metadata: ~
-  - add_docker_metadata: ~
+  - drop_fields:
+      fields: ["ecs", "log", "@metadata"]
+      ignore_missing: true
 
 # Available log levels are: error, warning, info, debug
-#logging.level: debug
+logging:
+  level: info
+  ecs: true
+  metrics:
+    enabled: false
+  
