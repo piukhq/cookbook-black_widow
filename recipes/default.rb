@@ -10,7 +10,7 @@ apt_repository 'elasticsearch' do
   action :remove
 end
 
-apt_repository 'elasticsearch' do
+apt_repository 'elasticsearch-oss' do
   arch 'amd64'
   uri 'https://artifacts.elastic.co/packages/oss-7.x/apt'
   components ['main']
