@@ -4,4 +4,4 @@ DEPENDENCIES
     metadata: true
 
 GRAPH
-  black_widow (1.1.1)
+  black_widow (1.1.2)

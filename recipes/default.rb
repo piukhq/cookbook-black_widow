@@ -27,11 +27,23 @@ service 'journalbeat' do
   action :enable
 end
 
-cookbook_file '/etc/journalbeat/journalbeat.yml' do
-  source 'journalbeat.yml'
+if node['roles'].include?('elasticsearch')
+  hostname = "localhost:9200"
+  bad_ssl = true
+else
+  hostname = "elasticsearch.uksouth.bink.host:9200"
+  bad_ssl = true
+end
+
+template '/etc/journalbeat/journalbeat.yml' do
+  source 'journalbeat.yml.erb'
   owner 'root'
   group 'root'
   mode '0600'
   action :create
   notifies :restart, 'service[journalbeat]'
+  variables(
+    hostname: hostname,
+    bad_ssl: bad_ssl
+  )
 end

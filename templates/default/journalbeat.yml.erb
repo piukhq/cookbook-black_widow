@@ -17,7 +17,7 @@ setup.template.settings:
 setup.ilm.enabled: false
 
 output.elasticsearch:
-  hosts: ["elasticsearch.uksouth.bink.host:9200"]
+  hosts: ["<%= @hostname %>"]
   protocol: "https"
   username: "filebeat"
   password: "S5&xauhVVeS*lT9qqa2z"
@@ -29,6 +29,7 @@ output.elasticsearch:
     max: 120s
   ssl:
     supported_protocols: ["TLSv1.2", "TLSv1.3"]
+    <% if @bad_ssl -%>verification_mode: certificate<% end %>
     certificate_authorities:
       - |
         -----BEGIN CERTIFICATE-----
