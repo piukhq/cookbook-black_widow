@@ -27,12 +27,12 @@ service 'journalbeat' do
   action :enable
 end
 
-if node['roles'].include?('elasticsearch')
-  hostname = "localhost:9200"
+if node.role?('elasticsearch')
+  hostname = 'localhost:9200'
   bad_ssl = true
 else
-  hostname = "elasticsearch.uksouth.bink.host:9200"
-  bad_ssl = true
+  hostname = 'elasticsearch.uksouth.bink.host:9200'
+  bad_ssl = false
 end
 
 template '/etc/journalbeat/journalbeat.yml' do
